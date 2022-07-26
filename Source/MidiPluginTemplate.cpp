@@ -7,6 +7,6 @@
 #include <JuceHeader.h>
 #include "TemplateProcessor.h"
 
-juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter() {
+AudioProcessor* JUCE_CALLTYPE createPluginFilter() {
     return new TemplateProcessor();
 }

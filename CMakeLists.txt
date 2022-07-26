@@ -4,15 +4,15 @@ set (CMAKE_CXX_STANDARD 20)
 
 
 ######################################################
-project (MIDI_PLUGIN_TEMPLATE_MINIMUM VERSION 0.0.1)
-set     (TargetName   MidiPluginTemplateMinimum)
-set     (ProductName "Midi Plugin Template Minimum")
+project (MIDI_PLUGIN_TEMPLATE VERSION 0.0.1)
+set     (TargetName   MidiPluginTemplate)
+set     (ProductName "Midi Plugin Template")
 ######################################################
 
 
 # fetching JUCE from git
 include(cmake/CPM.cmake)
-CPMAddPackage("gh:juce-framework/JUCE@7.0.0#master")
+CPMAddPackage("gh:juce-framework/JUCE@7.0.1#develop")
 
 # Compile commands, useful for some IDEs like VS-Code
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
@@ -85,8 +85,3 @@ target_link_libraries("${TargetName}"
         juce::juce_recommended_lto_flags
         juce::juce_recommended_warning_flags)
 
-# get some JUCE properties
-get_target_property(JUCE_COMPANY_WEBSITE ${TargetName} JUCE_COMPANY_WEBSITE)
-
-# export some vars to CMakeVars.h in /Source folder
-configure_file(CMakeVars.h.in "${CMAKE_CURRENT_SOURCE_DIR}/Source/CMakeVars.h" )

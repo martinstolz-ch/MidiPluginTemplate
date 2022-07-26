@@ -6,16 +6,14 @@
 
 #pragma once
 
-#include "Config.h"
-
-class TemplateEditor : public juce::AudioProcessorEditor {
+class TemplateEditor : public AudioProcessorEditor {
 public:
 
-    explicit TemplateEditor (juce::AudioProcessor& parent) : AudioProcessorEditor (parent) {
+    explicit TemplateEditor (AudioProcessor& parent) : AudioProcessorEditor (parent) {
         setSize (400, 200);
     }
 
-    void paint (juce::Graphics& graphicsContext) override {}
+    void paint (Graphics& graphicsContext) override {}
     void resized() override {}
 
 private:

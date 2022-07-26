@@ -7,9 +7,8 @@
 #pragma once
 
 #include "TemplateEditor.h"
-#include "Config.h"
 
-class TemplateProcessor : public juce::AudioProcessor {
+class TemplateProcessor : public AudioProcessor {
 public:
 
     TemplateProcessor() = default;
@@ -17,12 +16,12 @@ public:
     void prepareToPlay (double, int) override {}
     void releaseResources() override {}
 
-    void processBlock (juce::AudioSampleBuffer& buffer, juce::MidiBuffer&) override {}
+    void processBlock (AudioSampleBuffer& buffer, MidiBuffer&) override {}
 
-    juce::AudioProcessorEditor* createEditor() override          { return new TemplateEditor (*this); }
+    AudioProcessorEditor* createEditor() override          { return new TemplateEditor (*this); }
     bool hasEditor() const override                              { return true; }
 
-    const juce::String getName() const override                  { return PROJECT_NAME; }
+    const String getName() const override                  { return JucePlugin_Name; }
     bool acceptsMidi() const override                            { return false; }
     bool producesMidi() const override                           { return false; }
     double getTailLengthSeconds() const override                 { return 0; }
@@ -30,10 +29,10 @@ public:
     int getNumPrograms() override                                { return 1; }
     int getCurrentProgram() override                             { return 0; }
     void setCurrentProgram (int) override                        {}
-    const juce::String getProgramName (int) override             { return {}; }
-    void changeProgramName (int, const juce::String&) override   {}
+    const String getProgramName (int) override             { return {}; }
+    void changeProgramName (int, const String&) override   {}
 
-    void getStateInformation (juce::MemoryBlock& destData) override {}
+    void getStateInformation (MemoryBlock& destData) override {}
 
     void setStateInformation (const void* data, int sizeInBytes) override {}
 
