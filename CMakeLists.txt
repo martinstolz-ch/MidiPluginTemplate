@@ -7,6 +7,8 @@ set (CMAKE_CXX_STANDARD 20)
 project (MIDI_PLUGIN_TEMPLATE VERSION 0.0.1)
 set     (TargetName   MidiPluginTemplate)
 set     (ProductName "Midi Plugin Template")
+set     (PluginCode  "Pct0")     
+#        2 chars from product name + main version
 ######################################################
 
 
@@ -47,7 +49,7 @@ juce_add_plugin("${TargetName}"
     # EDITOR_WANTS_KEYBOARD_FOCUS TRUE/FALSE    # Does the editor need keyboard focus?
     COPY_PLUGIN_AFTER_BUILD TRUE
     PLUGIN_MANUFACTURER_CODE Noiz               # A four-character manufacturer id with at least one upper-case character
-    PLUGIN_CODE Plg0                            # A unique four-character plugin id with exactly one upper-case character
+    PLUGIN_CODE "${PluginCode}"                 # A unique four-character plugin id with exactly one upper-case character
                                                 # GarageBand 10.3 requires the first letter to be upper-case, and the remaining letters to be lower-case
     FORMATS AU VST3 Standalone                  # The formats to build. Other valid formats are: AAX Unity VST AU AUv3
     PRODUCT_NAME "${ProductName}")
