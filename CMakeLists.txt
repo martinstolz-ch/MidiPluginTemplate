@@ -7,8 +7,10 @@ set (CMAKE_CXX_STANDARD 20)
 project (MIDI_PLUGIN_TEMPLATE VERSION 0.0.1)
 set     (TargetName   MidiPluginTemplate)
 set     (ProductName "Midi Plugin Template")
-set     (PluginCode  "Pmp0")     
-#        -> 2 chars (lower case) from product name + main version
+set     (PluginCode  "Nmp0")     
+#        1 fixed upper case char "N" 
+#        + 2 chars (lower case) from product name 
+#        + 1 number (main version)
 #########################################################################
 
 
