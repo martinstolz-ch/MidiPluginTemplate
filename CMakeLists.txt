@@ -14,6 +14,15 @@ set     (PluginCode  "Nmp0")
 #########################################################################
 
 
+# boost lib needed ?
+option( UseBoost "Use the Boost library" ON )
+if ( UseBoost )
+    find_package( Boost )
+    if ( Boost_FOUND )
+        include_directories( ${Boost_INCLUDE_DIRS} )
+    endif()
+endif()
+
 # fetching JUCE from git
 include(cmake/CPM.cmake)
 CPMAddPackage("gh:juce-framework/JUCE@7.0.1#develop")
