@@ -15,7 +15,7 @@ set     (PluginCode  "Nmp0")
 
 
 # boost lib needed ?
-option( UseBoost "Use the Boost library" ON )
+option( UseBoost "Use the Boost library" OFF )
 if ( UseBoost )
     find_package( Boost )
     if ( Boost_FOUND )
