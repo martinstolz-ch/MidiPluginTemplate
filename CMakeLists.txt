@@ -26,7 +26,7 @@ endif()
 
 # fetching JUCE from git
 include(cmake/CPM.cmake)
-CPMAddPackage("gh:juce-framework/JUCE@7.0.1#develop")
+CPMAddPackage("gh:juce-framework/JUCE@7.0.2#develop")
 
 # Compile commands, useful for some IDEs like VS-Code
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
