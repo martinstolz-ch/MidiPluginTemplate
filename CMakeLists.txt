@@ -103,3 +103,8 @@ target_link_libraries("${TargetName}"
         juce::juce_recommended_warning_flags
         )
 
+# get some JUCE properties
+get_target_property(JUCE_COMPANY_WEBSITE ${TargetName} JUCE_COMPANY_WEBSITE)
+
+# export some vars to CMakeVars.h in /Source folder
+configure_file(CMake.h.in "${CMAKE_CURRENT_SOURCE_DIR}/Source/Common/CMakeVars.h" )
