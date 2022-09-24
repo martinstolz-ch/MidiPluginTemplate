@@ -4,7 +4,7 @@
  * (c) 2022 by noizplay.com
  */
 
-#include "MidiPluginProcessor.h"
+#include "Plugin/MidiPluginProcessor.h"
 
 #include <JuceHeader.h>
 
