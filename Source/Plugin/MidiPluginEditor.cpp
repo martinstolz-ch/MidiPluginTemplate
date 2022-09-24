@@ -9,6 +9,8 @@
 
 #include "MidiPluginEditor.h"
 
+using namespace std;
+
 MidiPluginEditor::MidiPluginEditor(AudioProcessor& audioProcessor): AudioProcessorEditor{audioProcessor} {
     setSize(400, 200);
 }
@@ -16,7 +18,9 @@ MidiPluginEditor::MidiPluginEditor(AudioProcessor& audioProcessor): AudioProcess
 void MidiPluginEditor::paint (Graphics& gContext) {
     gContext.setColour(Config::MAIN_COLOUR);
     gContext.setFont(
-            {Config::DEFAULT_TEXT_SIZE, juce::Font::FontStyleFlags::plain }
+            {
+                Config::DEFAULT_TEXT_SIZE,
+                juce::Font::FontStyleFlags::plain }
     );
     gContext.drawFittedText(
             CMakeVars::JUCE_COMPANY_WEBSITE,

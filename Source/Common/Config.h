@@ -14,6 +14,6 @@ namespace Config {
     const auto DEFAULT_TEXT_SIZE{14.f};
 
     // colours
-    const auto MAIN_COLOUR{Colour(0xFFD9E5B6)};
+    const auto MAIN_COLOUR{juce::Colour(0xFFD9E5B6)};
 
 }
