@@ -6,19 +6,21 @@
 
 #pragma once
 
-#include "TemplateEditor.h"
+#include "MidiPluginEditor.h"
 
-class TemplateProcessor : public AudioProcessor {
+#include <JuceHeader.h>
+
+class MidiPluginProcessor : public juce::AudioProcessor {
 public:
 
-    TemplateProcessor() = default;
+    MidiPluginProcessor() = default;
 
     void prepareToPlay (double, int) override {}
     void releaseResources() override {}
 
     void processBlock (AudioSampleBuffer& buffer, MidiBuffer&) override {}
 
-    AudioProcessorEditor* createEditor() override          { return new TemplateEditor (*this); }
+    juce::AudioProcessorEditor* createEditor() override          { return new MidiPluginEditor (*this); }
     bool hasEditor() const override                              { return true; }
 
     const String getName() const override                  { return JucePlugin_Name; }
@@ -38,5 +40,5 @@ public:
 
 private:
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TemplateProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MidiPluginProcessor)
 };

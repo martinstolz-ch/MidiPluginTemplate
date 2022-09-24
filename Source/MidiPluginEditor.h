@@ -6,10 +6,12 @@
 
 #pragma once
 
-class TemplateEditor : public AudioProcessorEditor {
+#include <JuceHeader.h>
+
+class MidiPluginEditor : public AudioProcessorEditor {
 public:
 
-    explicit TemplateEditor (AudioProcessor& parent) : AudioProcessorEditor (parent) {
+    explicit MidiPluginEditor (AudioProcessor& parent) : AudioProcessorEditor (parent) {
         setSize (400, 200);
     }
 

@@ -4,9 +4,9 @@ set (CMAKE_CXX_STANDARD 20)
 
 
 #########################################################################
-project (MIDI_PLUGIN_TEMPLATE VERSION 0.0.1)
-set     (TargetName   MidiPluginTemplate)
-set     (ProductName "Midi Plugin Template")
+project (MIDI_PLUGIN VERSION 0.0.1)
+set     (TargetName   MidiPlugin)
+set     (ProductName "Midi Plugin")
 set     (PluginCode  "Nmp0")     
 #        1 fixed upper case char "N" 
 #        + 2 chars (lower case) from product name 
@@ -70,7 +70,7 @@ juce_generate_juce_header("${TargetName}")
 
 target_sources("${TargetName}"
     PRIVATE
-        Source/MidiPluginTemplate.cpp
+        Source/MidiPlugin.cpp
 )
 
 target_compile_definitions("${TargetName}"
