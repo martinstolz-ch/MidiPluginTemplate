@@ -24,7 +24,7 @@ if ( UseBoost )
     endif()
 endif()
 
-# fetching JUCE from git
+# fetching JUCE directly from git
 include(cmake/CPM.cmake)
 CPMAddPackage("gh:juce-framework/JUCE@7.0.2#develop")
 
@@ -68,6 +68,8 @@ juce_add_plugin("${TargetName}"
 
 juce_generate_juce_header("${TargetName}")
 
+add_subdirectory(Modules)
+
 target_sources("${TargetName}"
     PRIVATE
         Source/MidiPlugin.cpp
@@ -85,6 +87,8 @@ target_compile_definitions("${TargetName}"
 
 target_link_libraries("${TargetName}"
     PRIVATE
+        plugin_helpers
+
         juce::juce_gui_extra
         juce::juce_audio_basics
         juce::juce_audio_devices
