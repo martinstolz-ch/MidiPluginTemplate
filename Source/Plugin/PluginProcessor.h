@@ -7,13 +7,12 @@
 #pragma once
 
 #include <plugin_helpers/plugin_helpers.h>
-#include "MidiPluginEditor.h"
 
 #include <JuceHeader.h>
 
-class MidiPluginProcessor: public AudioProcessorBase {
+class PluginProcessor: public AudioProcessorBase {
 public:
-    MidiPluginProcessor();
+    PluginProcessor();
 
     void prepareToPlay (double, int) override;
 
@@ -25,5 +24,5 @@ public:
     void setStateInformation (const void*, int) override;
 
 private:
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MidiPluginProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginProcessor)
 };

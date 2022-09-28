@@ -72,9 +72,8 @@ add_subdirectory(JuceModules)
 
 target_sources("${TargetName}"
     PRIVATE
-        Source/MidiPlugin.cpp
-        Source/Plugin/MidiPluginEditor.cpp
-        Source/Plugin/MidiPluginProcessor.cpp
+        Source/Plugin.cpp
+        Source/Plugin/PluginProcessor.cpp
         )
 
 target_compile_definitions("${TargetName}"
