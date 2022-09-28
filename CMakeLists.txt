@@ -68,7 +68,7 @@ juce_add_plugin("${TargetName}"
 
 juce_generate_juce_header("${TargetName}")
 
-add_subdirectory(Modules)
+add_subdirectory(JuceModules)
 
 target_sources("${TargetName}"
     PRIVATE
