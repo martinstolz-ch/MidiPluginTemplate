@@ -87,6 +87,7 @@ target_compile_definitions("${TargetName}"
 target_link_libraries("${TargetName}"
     PRIVATE
         plugin_helpers
+        processing_code
 
         juce::juce_gui_extra
         juce::juce_audio_basics
