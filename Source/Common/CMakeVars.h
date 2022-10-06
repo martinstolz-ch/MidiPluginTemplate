@@ -12,7 +12,7 @@ namespace CMakeVars {
 
     #define DECLARE_VAR(name, val) const std::string name{val};
 
-    DECLARE_VAR(JUCE_COMPANY_WEBSITE, "www.noizplay.com")
+    DECLARE_VAR(COMPANY_WEBSITE, "www.noizplay.com")
     DECLARE_VAR(PROJECT_VERSION, "0.0.1")
 
     #undef DECLARE_VAR

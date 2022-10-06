@@ -25,7 +25,7 @@ public:
                         juce::Font::FontStyleFlags::plain }
         );
         gContext.drawFittedText(
-                CMakeVars::JUCE_COMPANY_WEBSITE,
+                CMakeVars::COMPANY_WEBSITE,
                 getLocalBounds(),
                 juce::Justification::bottomLeft,
                 1);
