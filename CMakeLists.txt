@@ -14,16 +14,6 @@ set     (PluginCode  "Nmp0")
 #########################################################################
 
 
-# boost lib needed ?
-option( UseBoost "Use the Boost library" OFF )
-if ( UseBoost )
-    find_package( Boost )
-    if ( Boost_FOUND )
-        message( "-- Boost Version ${Boost_VERSION}" )
-        include_directories( ${Boost_INCLUDE_DIRS} )
-    endif()
-endif()
-
 # fetching JUCE directly from git
 include(cmake/CPM.cmake)
 CPMAddPackage("gh:juce-framework/JUCE@7.0.2#develop")
@@ -111,4 +101,4 @@ target_link_libraries("${TargetName}"
 get_target_property(JUCE_COMPANY_WEBSITE ${TargetName} JUCE_COMPANY_WEBSITE)
 
 # export some vars to CMakeVars.h in /Source folder
-configure_file(CMakeVars.h.tpl "${CMAKE_CURRENT_SOURCE_DIR}/Source/Common/CMakeVars.h" )
+configure_file(CMakeVars.h.txt "${CMAKE_CURRENT_SOURCE_DIR}/Source/Common/CMakeVars.h" )
