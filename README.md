@@ -6,4 +6,4 @@ Thanks to Eyal Amir (https://github.com/eyalamirmusic) for several good ideas an
 
 __The code is (imperfect) as it is, use at your own risk.__ 
 
-Support of this Repo is sporadic due to time constraints. 
+Support of this repo is sporadic due to time constraints. 
