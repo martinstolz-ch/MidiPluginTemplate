@@ -1,4 +1,4 @@
-# Midi Plugin Template
+# JUCE Midi Plugin Template
 
 My basic template for various midi plugins.
 
