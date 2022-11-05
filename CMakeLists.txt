@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 set (CMAKE_CXX_STANDARD 20)
 
 
-#########################################################################
+##########################################################################
 project (MIDI_PLUGIN VERSION 0.0.1)
 set     (TargetName   MidiPlugin)
 set     (ProductName "Midi Plugin")
@@ -11,7 +11,7 @@ set     (PluginCode  "Nmp0")
 #        1 fixed upper case char "N" 
 #        + 2 chars (lower case) from product name 
 #        + 1 number (main version)
-#########################################################################
+##########################################################################
 
 
 # fetching JUCE directly from git
