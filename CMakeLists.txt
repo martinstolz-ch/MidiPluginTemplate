@@ -8,7 +8,7 @@ project (MIDI_PLUGIN VERSION 0.0.1)
 set     (TargetName   MidiPlugin)
 set     (ProductName "Midi Plugin")
 set     (PluginCode  "Nmp0")     
-#        1 fixed upper case char "N" 
+#        1 fixed upper case char "N" (-> my company name "noizplay")
 #        + 2 chars (lower case) from product name 
 #        + 1 number (main version)
 #########################################################################
