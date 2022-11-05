@@ -1,4 +1,4 @@
-# MIDI Plugin Template (AU, VST) built with C++, JUCE and Cmake
+# MIDI Plugin Template
 
 My basic template for various midi plugins. Thanks to Eyal Amir (https://github.com/eyalamirmusic) for several good ideas and code fragments!
 
