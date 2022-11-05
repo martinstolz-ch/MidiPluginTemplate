@@ -1,9 +1,3 @@
-/**
- * created by Martin Stolz on 28.09.22
- *
- * (c) 2022 by noizplay.com
- */
-
 #include "WhiteNoise.h"
 
 namespace WhiteNoise {

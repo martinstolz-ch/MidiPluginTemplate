@@ -1,14 +1,8 @@
-/**
- * created by Martin Stolz on 28.09.22
- *
- * (c) 2022 by noizplay.com
- */
-
 #pragma once
 
 #include <JuceHeader.h>
 
-//A very simple white noise oscillator
+// simple white noise oscillator
 namespace WhiteNoise {
     class Oscillator {
     public:
