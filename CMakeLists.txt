@@ -16,7 +16,7 @@ set     (PluginCode  "Nmp0")
 
 # fetching JUCE directly from git
 include(cmake/CPM.cmake)
-CPMAddPackage("gh:juce-framework/JUCE@7.0.2#develop")
+CPMAddPackage("gh:juce-framework/JUCE@7.0.3#develop")
 
 # Compile commands, useful for some IDEs like VS-Code
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
