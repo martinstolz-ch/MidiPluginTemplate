@@ -1,4 +1,4 @@
-# JUCE Midi Plugin Template
+# MIDI Plugin Template
 
 My basic template for various midi plugins. Thanks to Eyal Amir (https://github.com/eyalamirmusic) for several good ideas and code fragments!
 
