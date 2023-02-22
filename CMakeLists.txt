@@ -14,8 +14,9 @@ set     (PluginCode  "Nmp0")
 ##########################################################################
 
 
-# fetching JUCE directly from git
-include(cmake/CPM.cmake)
+# fetching JUCE from git
+include("cmake/CPM.cmake")
+set(CPM_SOURCE_CACHE ~/.cache/CPM)
 CPMAddPackage("gh:juce-framework/JUCE@7.0.5#develop")
 
 # Compile commands, useful for some IDEs like VS-Code
