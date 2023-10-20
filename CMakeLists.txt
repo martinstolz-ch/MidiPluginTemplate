@@ -26,7 +26,7 @@ CPMAddPackage("gh:juce-framework/JUCE@7.0.8#master")
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
 # Minimum MacOS target, set globally
-set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9" CACHE STRING "Minimum OS X deployment version" FORCE)
+set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0" CACHE STRING "Minimum OS X deployment version" FORCE)
 
 # Universal Binary ?
 option(UniversalBinary "Build universal binary for mac" ON)
