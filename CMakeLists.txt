@@ -20,7 +20,7 @@ set(CPM_USE_NAMED_CACHE_DIRECTORIES true)
 set(CPM_SOURCE_CACHE ~/.cache/CPM)
 
 # get JUCE
-CPMAddPackage("gh:juce-framework/JUCE@7.0.8#master")
+CPMAddPackage("gh:juce-framework/JUCE@7.0.9#master")
 
 # Compile commands, useful for some IDEs like VS-Code
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
