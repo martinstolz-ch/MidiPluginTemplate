@@ -8,7 +8,7 @@ project (MIDI_PLUGIN VERSION 0.0.1)
 set     (TargetName   MidiPlugin)
 set     (ProductName "Midi Plugin")
 set     (PluginCode  "Nmp0")     
-#        1 fixed upper case char "N" (for my company name "noizplay")
+#        1 fixed upper case char "N" (for my brand "noizplay")
 #        + 2 chars (lower case) from product name 
 #        + 1 number (main version)
 ##########################################################################
@@ -20,7 +20,7 @@ set(CPM_USE_NAMED_CACHE_DIRECTORIES true)
 set(CPM_SOURCE_CACHE ~/.cache/CPM)
 
 # get JUCE
-CPMAddPackage("gh:juce-framework/JUCE@7.0.9#master")
+CPMAddPackage("gh:juce-framework/JUCE@7.0.10#master")
 
 # Compile commands, useful for some IDEs like VS-Code
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
