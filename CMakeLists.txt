@@ -20,7 +20,7 @@ set(CPM_USE_NAMED_CACHE_DIRECTORIES true)
 set(CPM_SOURCE_CACHE ~/.cache/CPM)
 
 # get JUCE
-CPMAddPackage("gh:juce-framework/JUCE@7.0.10#master")
+CPMAddPackage("gh:juce-framework/JUCE@7.0.11#master")
 
 # Compile commands, useful for some IDEs like VS-Code
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
@@ -75,7 +75,7 @@ target_compile_definitions("${TargetName}"
         JUCE_WEB_BROWSER=0  # If you remove this, add `NEEDS_WEB_BROWSER TRUE` to the `juce_add_plugin` call
         JUCE_USE_CURL=0     # If you remove this, add `NEEDS_CURL TRUE` to the `juce_add_plugin` call
         JUCE_VST3_CAN_REPLACE_VST2=0
-        JUCE_DISPLAY_SPLASH_SCREEN=1
+        JUCE_DISPLAY_SPLASH_SCREEN=0
         )
 
 target_link_libraries("${TargetName}"
