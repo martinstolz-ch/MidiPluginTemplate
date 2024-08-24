@@ -1,2 +1,0 @@
-juce_add_modules(plugin_helpers)
-juce_add_modules(processing_code)
