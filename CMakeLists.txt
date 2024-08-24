@@ -54,6 +54,9 @@ FetchContent_MakeAvailable(JUCE)
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 option(JUCE_ENABLE_MODULE_SOURCE_GROUPS "Enable Module Source Groups" ON)
 
+# add JUCE modules
+juce_add_module(${CMAKE_CURRENT_SOURCE_DIR}/modules/AudioProcessorBase)
+
 juce_add_plugin("${TargetName}"
     # VERSION ...                               # Set this if the plugin version is different to the project version
     # ICON_BIG ...
@@ -74,7 +77,7 @@ juce_add_plugin("${TargetName}"
 
 juce_generate_juce_header("${TargetName}")
 
-add_subdirectory(JuceModules)
+# add_subdirectory(JuceModules)
 
 target_sources("${TargetName}"
     PRIVATE
@@ -92,9 +95,11 @@ target_compile_definitions("${TargetName}"
 
 target_link_libraries("${TargetName}"
     PRIVATE
-        plugin_helpers
-        processing_code
 
+        # own modules
+        AudioProcessorBase
+
+        # juce modules
         juce::juce_gui_extra
         juce::juce_audio_basics
         juce::juce_audio_devices

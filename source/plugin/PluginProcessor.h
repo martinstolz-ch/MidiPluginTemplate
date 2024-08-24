@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <plugin_helpers/plugin_helpers.h>
+#include "../modules/AudioProcessorBase/AudioProcessorBase.h"
 
 #include <JuceHeader.h>
 
