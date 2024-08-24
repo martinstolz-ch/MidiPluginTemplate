@@ -5,7 +5,7 @@
 AudioProcessorBase::AudioProcessorBase() = default;
 AudioProcessorBase::AudioProcessorBase(BusesProperties const& ioLayouts): AudioProcessor(ioLayouts) {}
 
-juce::String const AudioProcessorBase::getName() const {
+String const AudioProcessorBase::getName() const {
     return JucePlugin_Name;
 }
 
@@ -47,22 +47,22 @@ int AudioProcessorBase::getCurrentProgram() {
 }
 
 void AudioProcessorBase::setCurrentProgram(int index) {
-    juce::ignoreUnused(index);
+    ignoreUnused(index);
 }
 
-juce::String const AudioProcessorBase::getProgramName(int index) {
-    juce::ignoreUnused(index);
+String const AudioProcessorBase::getProgramName(int index) {
+    ignoreUnused(index);
     return {};
 }
 
-void AudioProcessorBase::changeProgramName(int index, juce::String const& newName) {
-    juce::ignoreUnused(index, newName);
+void AudioProcessorBase::changeProgramName(int index, String const& newName) {
+    ignoreUnused(index, newName);
 }
 
 void AudioProcessorBase::prepareToPlay(double sampleRate, int samplesPerBlock) {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
-    juce::ignoreUnused(sampleRate, samplesPerBlock);
+    ignoreUnused(sampleRate, samplesPerBlock);
 }
 
 void AudioProcessorBase::releaseResources() {}
@@ -78,20 +78,20 @@ juce::AudioProcessor::BusesProperties AudioProcessorBase::getDefaultProperties()
         ;
 }
 
-juce::AudioProcessorEditor* AudioProcessorBase::createEditor() {
-    return new juce::GenericAudioProcessorEditor(*this);
+AudioProcessorEditor* AudioProcessorBase::createEditor() {
+    return new GenericAudioProcessorEditor(*this);
 }
 
 bool AudioProcessorBase::hasEditor() const {
     return true;
 }
 
-bool AudioProcessorBase::isBusesLayoutSupported(juce::AudioProcessor::BusesLayout const& layouts) const {
+bool AudioProcessorBase::isBusesLayoutSupported(AudioProcessor::BusesLayout const& layouts) const {
     if (isMidiEffect()) {
         return true;
     } else {
-        if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
-            && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo()) {
+        if (layouts.getMainOutputChannelSet() != AudioChannelSet::mono()
+            && layouts.getMainOutputChannelSet() != AudioChannelSet::stereo()) {
             return false;
         }
     }
@@ -105,10 +105,10 @@ bool AudioProcessorBase::isBusesLayoutSupported(juce::AudioProcessor::BusesLayou
     return true;
 }
 
-void AudioProcessorBase::getStateInformation(juce::MemoryBlock& destData) {
-    juce::ignoreUnused(destData);
+void AudioProcessorBase::getStateInformation(MemoryBlock& destData) {
+    ignoreUnused(destData);
 }
 
 void AudioProcessorBase::setStateInformation(const void* data, int sizeInBytes) {
-    juce::ignoreUnused(data, sizeInBytes);
+    ignoreUnused(data, sizeInBytes);
 }

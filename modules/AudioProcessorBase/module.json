@@ -12,5 +12,7 @@
   ],
   "website": "https://martinstolz.ch",
   "macros": [],
-  "include": "MyCustomModule.h"
+  "include": "MyCustomModule.h",
+  "id": "audioProcessorBase",
+  "title": "Audio Processor Base"
 }
