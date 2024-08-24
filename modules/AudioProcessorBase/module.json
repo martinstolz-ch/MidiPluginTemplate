@@ -1,18 +1,18 @@
 {
   "name": "AudioProcessorBase",
   "version": "1.0.0",
-  "description": "boilerplate code for audio processor",
+  "description": "boilerplate code for the audio processor",
   "license": "MIT",
   "dependencies": [],
   "authors": [
     {
       "name": "Martin Stolz",
-      "email": "info@martinstolz.ch"
+      "email": "martin.stolz@noizplay.com"
     }
   ],
-  "website": "https://martinstolz.ch",
+  "website": "https://noizplay.com",
   "macros": [],
-  "include": "MyCustomModule.h",
+  "include": "",
   "id": "audioProcessorBase",
   "title": "Audio Processor Base"
 }
