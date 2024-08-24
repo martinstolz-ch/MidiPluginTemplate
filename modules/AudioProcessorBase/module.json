@@ -1,0 +1,16 @@
+{
+  "name": "AudioProcessorBase",
+  "version": "1.0.0",
+  "description": "boilerplate code for audio processor",
+  "license": "MIT",
+  "dependencies": [],
+  "authors": [
+    {
+      "name": "Martin Stolz",
+      "email": "info@martinstolz.ch"
+    }
+  ],
+  "website": "https://martinstolz.ch",
+  "macros": [],
+  "include": "MyCustomModule.h"
+}
