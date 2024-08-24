@@ -1,42 +1,54 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.28)
 
 set (CMAKE_CXX_STANDARD 20)
 
-
-##########################################################################
+###############################################################################
+# martin stolz - (c) noizplay.com
+###############################################################################
 project (MIDI_PLUGIN VERSION 0.0.1)
-set     (TargetName   MidiPlugin)
-set     (ProductName "Midi Plugin")
-set     (PluginCode  "Nmp0")     
+set     (TargetName    ${PROJECT_NAME})
+set     (ProductName  "Midi Plugin")
+set     (PluginCode   "Nmp0")
 #        1 fixed upper case char "N" (for my brand "noizplay")
-#        + 2 chars (lower case) from product name 
+#        + 2 chars (lower case) from product name
 #        + 1 number (main version)
-##########################################################################
 
+set (companyName "noizplay")
+set (companyURL "noizplay.com")
+###############################################################################
 
-# use CPM
-include(cmake/CPM.cmake)
-set(CPM_USE_NAMED_CACHE_DIRECTORIES true)
-set(CPM_SOURCE_CACHE ~/.cache/CPM)
+# initialise
+set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set_property (GLOBAL PROPERTY USE_FOLDERS YES)
+option (JUCE_ENABLE_MODULE_SOURCE_GROUPS "Enable Module Source Groups" ON)
 
-# get JUCE
-CPMAddPackage("gh:juce-framework/JUCE@7.0.11#master")
+# we are Mac ?
+if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    set (CMAKE_OSX_DEPLOYMENT_TARGET "13.0" CACHE STRING "Minimum OS X deployment version" FORCE)
+    set (CMAKE_OSX_ARCHITECTURES "arm64;x86_64" CACHE INTERNAL "")
+    set (MACOSX_BUNDLE TRUE) # create .app bundle for mac
+    message (STATUS "Build for Mac")
 
-# Compile commands, useful for some IDEs like VS-Code
-set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+    # ...or Win ?
+elseif (CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    set (CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>") # static linking in Windows
+    message (STATUS "Build for Windows")
 
-# Minimum MacOS target, set globally
-set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0" CACHE STRING "Minimum OS X deployment version" FORCE)
+    # ...nope :/
+else ()
+    message (FATAL_ERROR "No viable platform found")
+endif ()
 
-# Universal Binary ?
-option(UniversalBinary "Build universal binary for mac" ON)
+# fetch external repos
+include(FetchContent)
 
-if (UniversalBinary)
-    set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64" CACHE INTERNAL "")
-endif()
-
-# static linking in Windows
-set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+message (STATUS "Fetch JUCE")
+FetchContent_Declare(
+    JUCE
+    GIT_REPOSITORY https://github.com/juce-framework/JUCE.git
+    GIT_TAG 8.0.1
+)
+FetchContent_MakeAvailable(JUCE)
 
 # Adds all the module sources so they appear correctly in the IDE
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
