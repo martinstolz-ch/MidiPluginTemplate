@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.28)
 set (CMAKE_CXX_STANDARD 20)
 
 ###############################################################################
-# martin stolz - (c) noizplay.com
+# (c) martin.stolz@noizplay.com
 ###############################################################################
 project (MIDI_PLUGIN VERSION 0.0.1)
 set     (TargetName    ${PROJECT_NAME})
@@ -113,8 +113,7 @@ target_link_libraries("${TargetName}"
         juce::juce_recommended_warning_flags
         )
 
-# get some JUCE properties
-get_target_property(JUCE_COMPANY_WEBSITE ${TargetName} JUCE_COMPANY_WEBSITE)
-
-# export some vars to CMakeVars.h in /Source folder
-configure_file(CMakeVars.h.txt "${CMAKE_CURRENT_SOURCE_DIR}/Source/Common/CMakeVars.h" )
+# create cmakeVars.h
+get_target_property (COMPANY_WEBSITE ${TargetName} JUCE_COMPANY_WEBSITE)
+string (TIMESTAMP buildYear "%Y")
+configure_file (template/cmakeVar.h.tpl "${CMAKE_CURRENT_SOURCE_DIR}/source/etc/cmakeVar.h" )

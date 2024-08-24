@@ -1,7 +1,5 @@
 /**
- * created by Martin Stolz on 04.06.22
- *
- * (c) 2022 by noizplay.com
+ * (c) martin.stolz@noizplay.com
  */
 
 #include "Plugin/PluginProcessor.h"
